@@ -1,6 +1,19 @@
+body{
+  background-color: gray;
+}
+
 
 h1{
   font-family: cursive;
   text-align: center;
+}
 
+.list-idea {
+  height: 400px;
+  overflow: auto;
+  background: gray;  
+}
+
+.idea {
+  height: 100px;
 }
