@@ -20,5 +20,6 @@ export class AppComponent  {
 
   newIdea(){
     console.log(this.ideaForm.value);
+    
   }
 }
