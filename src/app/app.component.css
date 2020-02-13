@@ -20,5 +20,6 @@ h1{
 }
 
 .idea {
-  height: 100px;
+  height: auto;
+  padding-top: 25px;
 }
