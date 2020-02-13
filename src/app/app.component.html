@@ -1,28 +1,28 @@
 <h1>
 	I'm terrible at web programming!!!
 </h1>
-
-<form [formGroup]="ideaForm" (ngSubmit)="newIdea()">
-  <div class="input-group mx-auto mb-1" style="width:85%">
-    <div class="input-group-prepend">
+<div class="container center_div col-10">
+  <form [formGroup]="ideaForm" (ngSubmit)="newIdea()" class=" text-right">
+    <div class="input-group mx-auto mb-1 " >
+      <div class="input-group-prepend">
+      </div>
+      <input type="text"  formControlName="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
     </div>
-    <input type="text"  formControlName="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-  </div>
 
-  <div class="input-group mx-auto" style="width:85%">
-    <div class="input-group-prepend">
+    <div class="input-group mx-auto">
+      <div class="input-group-prepend">
+      </div>
+      <textarea class="form-control" formControlName="description"aria-label="With textarea" placeholder="Type here your idea..."></textarea>
     </div>
-    <textarea class="form-control" formControlName="description"aria-label="With textarea" placeholder="Type here your idea..."></textarea>
-  </div>
 
-  <button type="submit" class="btn btn-outline-primary mt-1">
-    Submit idea
-  </button>
-  <button type="reset" class="btn btn-outline-danger ml-1 mt-1">
-    Cancel
-  </button>
-</form>
-
+    <button type="submit" class="btn btn-outline-primary mt-1">
+      Submit idea
+    </button>
+    <button type="reset" class="btn btn-outline-danger ml-1 mt-1" id="pute">
+      Cancel
+    </button>
+  </form>
+</div>
 <div class="list-idea">
   <div class="idea">
     <h5>Username</h5>
