@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms'
+
+import { IdeaService, Idea } from './idea.service';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
   name = 'Angular';
-  ideaForm : FormGroup
+  ideaForm : FormGroup;
+  ideas: Idea[];
 
-  constructor(private fb: FormBuilder){
+  constructor(
+    private fb: FormBuilder,
+    private ideaService: IdeaService
+    ){
 
     this.ideaForm = this.fb.group({
       username: '',
@@ -18,8 +24,11 @@ export class AppComponent  {
     })
   }
 
+  ngOnInit() {
+    this.ideas = this.ideaService.getIdeas();
+  }
+
   newIdea(){
-    console.log(this.ideaForm.value);
-    
+    this.ideaService.addIdea(this.ideaForm.value.username, this.ideaForm.value.description)
   }
 }
