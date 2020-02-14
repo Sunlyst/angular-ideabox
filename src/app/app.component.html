@@ -1,5 +1,5 @@
 <h1>
-	I'm terrible at web programming!!!
+	My idea box
 </h1>
 <div class="container center_div col-10">
   <form [formGroup]="ideaForm" (ngSubmit)="newIdea()" class=" text-right">
@@ -18,7 +18,7 @@
     <button type="submit" class="btn btn-outline-primary mt-1">
       Submit idea
     </button>
-    <button type="reset" class="btn btn-outline-danger ml-1 mt-1" id="pute">
+    <button type="reset" class="btn btn-outline-danger ml-1 mt-1">
       Cancel
     </button>
   </form>
@@ -26,7 +26,15 @@
 
 <div class="list-idea">
   <div class="idea" *ngFor="let idea of ideas">
-    <h5>{{ idea.username }}</h5>
-    {{ idea.description }}
+    <div class="username">
+      {{ idea.username }}
+    </div>
+    <div class="description">
+      {{ idea.description }}
+    </div>
+    <div>
+        <button type="button" class="btn btn-outline-success btn-sm mr-1" id="AgreeBtn">Agree</button>
+        <button type="button" class="btn btn-outline-danger btn-sm" id="DisagreeBtn">Disagree</button>
+    </div>
   </div>
 </div>

@@ -8,8 +8,8 @@ import { IdeaService, Idea } from './idea.service';
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
+
 export class AppComponent implements OnInit {
-  name = 'Angular';
   ideaForm : FormGroup;
   ideas: Idea[];
 
@@ -29,6 +29,9 @@ export class AppComponent implements OnInit {
   }
 
   newIdea(){
-    this.ideaService.addIdea(this.ideaForm.value.username, this.ideaForm.value.description)
+    if(this.ideaForm.value.username != '' && this.ideaForm.value.description != '')
+    {  
+      this.ideaService.addIdea(this.ideaForm.value.username, this.ideaForm.value.description)
+    }
   }
 }
