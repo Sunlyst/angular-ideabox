@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms'
 import { IdeaService, Idea } from '../idea.service';
 
 @Component({
@@ -8,12 +9,25 @@ import { IdeaService, Idea } from '../idea.service';
 })
 export class IdeaListComponent implements OnInit {
 
-  private ideas : idea[];
+  private ideas : Idea[];
+  ideaForm : FormGroup;
 
-  constructor(private ideaService: IdeaService) { 
+  constructor(
+    private ideaService: IdeaService,
+    private fb: FormBuilder,
+    ){
 
-    
+    this.ideaForm = this.fb.group({
+      username: '',
+      description: ''
+    })
+  }
 
+  newIdea(){
+    if(this.ideaForm.value.username != '' && this.ideaForm.value.description != '')
+    {  
+      this.ideaService.addIdea(this.ideaForm.value.username, this.ideaForm.value.description)
+    }
   }
 
 

@@ -1,3 +1,37 @@
-<p>
-idea-list works!
-</p>
+<div class="container center_div col-10">
+  <form [formGroup]="ideaForm" (ngSubmit)="newIdea()" class=" text-right">
+    <div class="input-group mx-auto mb-1 " >
+      <div class="input-group-prepend">
+      </div>
+      <input type="text" formControlName="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mx-auto">
+      <div class="input-group-prepend">
+      </div>
+      <textarea class="form-control" formControlName="description"aria-label="With textarea" placeholder="Type here your idea..."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary mt-1">
+      Submit idea
+    </button>
+    <button type="reset" class="btn btn-outline-danger ml-1 mt-1">
+      Cancel
+    </button>
+  </form>
+</div>
+
+<div class="list-idea">
+  <div class="idea" *ngFor="let idea of ideas">
+    <div class="username">
+      {{ idea.username }}
+    </div>
+    <div class="description">
+      {{ idea.description }}
+    </div>
+    <div>
+        <button type="button" class="btn btn-outline-success btn-sm mr-1" id="AgreeBtn">Agree</button>
+        <button type="button" class="btn btn-outline-danger btn-sm" id="DisagreeBtn">Disagree</button>
+    </div>
+  </div>
+</div>
