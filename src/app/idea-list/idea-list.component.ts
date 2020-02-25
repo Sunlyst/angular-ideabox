@@ -12,6 +12,4 @@ export class IdeaListComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
 }
