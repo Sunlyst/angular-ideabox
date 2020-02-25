@@ -5,10 +5,11 @@ import {ReactiveFormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { IdeaService } from './idea.service';
+import { IdeaListComponent } from './idea-list/idea-list.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, IdeaListComponent ],
   bootstrap:    [ AppComponent ],
   providers: [IdeaService]
 })
