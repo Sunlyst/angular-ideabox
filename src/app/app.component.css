@@ -5,37 +5,5 @@ h1{
   margin-bottom: 50px;
 }
 
-.list-idea{
-  height: 400px;
-  overflow: auto;
-  margin-top: 100px;
-  margin-left: 50px;
-  margin-right: 50px;
-  outline-style: solid;
-  outline-width: 1px;
-  outline-color: darkgrey;
-}
 
-.list-idea::-webkit-scrollbar{
-  width: 6px;
-}
 
-.list-idea::-webkit-scrollbar-thumb{
-	border-radius: 5px;
-	background-color: rgba(56, 56, 56, 0.363);
-}
-
-.idea{
-  height: auto;
-  margin-left: 15px;
-  padding-top: 20px;
-}
-
-.username{
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.description{
-  margin-left: 15px;
-}
