@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IdeaService, Idea } from '../idea.service';
 
 @Component({
   selector: 'app-idea-list',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdeaListComponent implements OnInit {
 
-  constructor() { }
+  private ideas : idea[];
 
-  ngOnInit() {
+  constructor(private ideaService: IdeaService) { 
+
+    
+
   }
 
+
+  ngOnInit() {
+    this.ideas = this.ideaService.getIdeas();
+  }
 }

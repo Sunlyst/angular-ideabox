@@ -10,28 +10,8 @@ import { IdeaService, Idea } from './idea.service';
 })
 
 export class AppComponent implements OnInit {
-  ideaForm : FormGroup;
-  ideas: Idea[];
 
-  constructor(
-    private fb: FormBuilder,
-    private ideaService: IdeaService
-    ){
+  constructor(){
 
-    this.ideaForm = this.fb.group({
-      username: '',
-      description: ''
-    })
-  }
-
-  ngOnInit() {
-    this.ideas = this.ideaService.getIdeas();
-  }
-
-  newIdea(){
-    if(this.ideaForm.value.username != '' && this.ideaForm.value.description != '')
-    {  
-      this.ideaService.addIdea(this.ideaForm.value.username, this.ideaForm.value.description)
-    }
   }
 }
