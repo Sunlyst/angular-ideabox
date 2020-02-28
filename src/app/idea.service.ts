@@ -3,8 +3,6 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class IdeaService {
   private ideas: Array<Idea>;
-  
-  //public static instance: IdeaService;
 
   constructor() {
     this.ideas = [];

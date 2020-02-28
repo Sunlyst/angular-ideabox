@@ -10,8 +10,9 @@ export class IdeaListComponent implements OnInit {
 
   private ideas : Idea[];
 
-  constructor(){
-    private ideaService: IdeaService
+  constructor(
+     private ideaService: IdeaService
+  ){
   }
 
 
