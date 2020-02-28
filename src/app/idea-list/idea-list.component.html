@@ -7,8 +7,14 @@
       {{ idea.description }}
     </div>
     <div>
-        <button type="button" class="btn btn-outline-success btn-sm mr-1" id="AgreeBtn">Agree</button>
-        <button type="button" class="btn btn-outline-danger btn-sm" id="DisagreeBtn">Disagree</button>
+        <button type="button" class="btn btn-outline-success btn-sm mr-1" (click)="Like(idea)" id="AgreeBtn">
+          Agree 
+        </button>
+        <button type="button" class="btn btn-outline-danger btn-sm" (click)="Dislike(idea)" id="DisagreeBtn">
+          Disagree
+        </button>
+        
+        {{ idea.rating }}
     </div>
   </div>
 </div>

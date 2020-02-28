@@ -10,13 +10,22 @@ export class IdeaListComponent implements OnInit {
 
   private ideas : Idea[];
 
-  constructor(private ideaService: IdeaService)
-  {
-
+  constructor(){
+    private ideaService: IdeaService
   }
 
 
   ngOnInit(){
     this.ideas = this.ideaService.getIdeas();
+    //this.ideas = IdeaService.instance.getIdeas();
+  }
+
+  Like(idea: Idea)
+  {
+    idea.rating++;
+  }
+  Dislike(idea: Idea)
+  {
+    idea.rating--;
   }
 }

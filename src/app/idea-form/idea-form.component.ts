@@ -23,8 +23,7 @@ export class IdeaFormComponent{
   }
 
   newIdea(){
-    if(this.ideaForm.value.username != '' && this.ideaForm.value.description != '')
-    {  
+    if(this.ideaForm.value.username != '' && this.ideaForm.value.description != ''){  
       this.ideaService.addIdea(this.ideaForm.value.username, this.ideaForm.value.description)
     }
   }
